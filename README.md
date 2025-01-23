@@ -1,3 +1,10 @@
+# Graph Coloring Register Allocator Experiment
+`llvm/lib/CodeGen/RegAllocChaitin*`
+
+Add `-mllvm -regalloc=chaitin` flags to clang while compiling to use the Chaitin register allocator.
+
+The Chaitin register allocator requires at least `-O1` optimization.
+
 # The LLVM Compiler Infrastructure
 
 [![OpenSSF Scorecard](https://api.securityscorecards.dev/projects/github.com/llvm/llvm-project/badge)](https://securityscorecards.dev/viewer/?uri=github.com/llvm/llvm-project)
