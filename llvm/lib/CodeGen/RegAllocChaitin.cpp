@@ -5,7 +5,6 @@
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 
 #include "RegAllocChaitinRegisters.h"
-#include "RegAllocChaitinSolverBitEA.h"
 #include "RegAllocChaitinSolvers.h"
 #include "RegAllocChaitinGraph.h"
 
@@ -408,7 +407,7 @@ bool RAChaitin::runOnMachineFunction(MachineFunction &mf) {
 
   SpillerInstance.reset(createInlineSpiller(*this, *MF, *VRM, VRAI));
 
-  unsigned N = assignRemainingIntervals(alihan::solveBitEA);
+  unsigned N = assignRemainingIntervals(alihan::solveChaitin);
   LLVM_DEBUG(dbgs() << "Assigned " << N << " intervals\n");
 
   allocatePhysRegs();
